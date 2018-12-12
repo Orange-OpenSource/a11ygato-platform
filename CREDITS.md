@@ -1,4 +1,4 @@
-# Credits (570)
+# Credits (562)
 
 ## (BSD-2-Clause OR MIT OR Apache-2.0)
 
@@ -8,18 +8,18 @@
 - [atob@2.1.2](git://git.coolaj86.com/coolaj86/atob.js) from [AJ ONeal](mailto:coolaj86@gmail.com)
 ## AGPL-3.0
 
-- @pm2/agent@0.5.19 from Keymetrics Team
-- [pm2@3.2.2](https://github.com/Unitech/pm2) from [Strzelewicz Alexandre](mailto:alexandre@pm2.io)
+- @pm2/agent@0.5.20 from Keymetrics Team
+- [pm2@3.2.3](https://github.com/Unitech/pm2) from [Strzelewicz Alexandre](mailto:alexandre@pm2.io)
 ## Apache*
 
-- [@pm2/js-api@0.5.33](https://github.com/keymetrics/km.js) from Keymetrics Team
+- [@pm2/js-api@0.5.40](https://github.com/keymetrics/km.js) from Keymetrics Team
 ## Apache-2.0
 
 - deep-metrics@0.0.2
 - [rxjs@6.3.3](https://github.com/reactivex/rxjs) from [Ben Lesh](mailto:ben@benlesh.com)
 - [vxx@1.2.2](https://github.com/keymetrics/vxx) from Google Inc.
 - [vizion@2.0.2](https://github.com/keymetrics/vizion) from [Keymetrics](mailto:contact@keymetrics.io)
-- [spdx-correct@3.0.2](https://github.com/jslicense/spdx-correct.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
+- [spdx-correct@3.1.0](https://github.com/jslicense/spdx-correct.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
 - [validate-npm-package-license@3.0.4](https://github.com/kemitchell/validate-npm-package-license.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
 - [detect-libc@1.0.3](https://github.com/lovell/detect-libc) from [Lovell Fuller](mailto:npm@lovell.info)
 - [tslib@1.9.3](https://github.com/Microsoft/tslib) from Microsoft Corp.
@@ -60,7 +60,7 @@
 - [spdx-license-ids@3.0.2](https://github.com/shinnn/spdx-license-ids) from Shinnosuke Watanabe
 ## GPL-3.0*
 
-- [@a11ygato/platform@0.3.0](https://github.com/Orange-OpenSource/a11ygato-platform) from Orange
+- [@a11ygato/platform@1.0.0](https://github.com/Orange-OpenSource/a11ygato-platform) from Orange
 ## ISC
 
 - [set-blocking@2.0.0](https://github.com/yargs/set-blocking) from [Ben Coe](mailto:ben@npmjs.com)
@@ -72,23 +72,29 @@
 - [signal-exit@3.0.2](https://github.com/tapjs/signal-exit) from [Ben Coe](mailto:ben@npmjs.com)
 - [glob-parent@3.1.0](https://github.com/es128/glob-parent) from Elan Shanker
 - [anymatch@2.0.0](https://github.com/micromatch/anymatch) from Elan Shanker
-- [chownr@1.0.1](https://github.com/isaacs/chownr) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [nopt@4.0.1](https://github.com/npm/nopt) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [which@1.3.1](https://github.com/isaacs/node-which) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [dezalgo@1.0.3](https://github.com/npm/dezalgo) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [yallist@2.1.2](https://github.com/isaacs/yallist) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [fs-minipass@1.2.5](https://github.com/npm/fs-minipass) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [fs.realpath@1.0.0](https://github.com/isaacs/fs.realpath) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [nopt@4.0.1](https://github.com/npm/nopt) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [abbrev@1.1.1](https://github.com/isaacs/abbrev-js) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [wrappy@1.0.2](https://github.com/npm/wrappy) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [glob@7.1.2](https://github.com/isaacs/node-glob) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [glob@7.1.3](https://github.com/isaacs/node-glob) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [tar@4.4.1](https://github.com/npm/node-tar) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [yallist@3.0.2](https://github.com/isaacs/yallist) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [ignore-walk@3.0.1](https://github.com/isaacs/ignore-walk) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [inflight@1.0.6](https://github.com/npm/inflight) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [ini@1.3.5](https://github.com/isaacs/ini) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [wrappy@1.0.2](https://github.com/npm/wrappy) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [slide@1.1.6](https://github.com/isaacs/slide-flow-control) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [isexe@2.0.0](https://github.com/isaacs/isexe) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [json-stringify-safe@5.0.1](https://github.com/isaacs/json-stringify-safe) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [lru-cache@4.1.4](https://github.com/isaacs/node-lru-cache) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [lru-cache@4.1.5](https://github.com/isaacs/node-lru-cache) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [minimatch@3.0.4](https://github.com/isaacs/minimatch) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [minipass@2.2.4](https://github.com/isaacs/minipass) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [mute-stream@0.0.7](https://github.com/isaacs/mute-stream) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [yallist@3.0.2](https://github.com/isaacs/yallist) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [chownr@1.0.1](https://github.com/isaacs/chownr) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [npm-bundled@1.0.3](https://github.com/npm/npm-bundled) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [npm-packlist@1.1.10](https://github.com/npm/npm-packlist) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [npmlog@4.1.2](https://github.com/npm/npmlog) from [Isaac Z. Schlueter](mailto:i@izs.me)
@@ -99,27 +105,21 @@
 - [read-package-json@2.0.13](https://github.com/npm/read-package-json) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [read@1.0.7](https://github.com/isaacs/read) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [readdir-scoped-modules@1.0.2](https://github.com/npm/readdir-scoped-modules) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [which@1.3.1](https://github.com/isaacs/node-which) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [rimraf@2.6.2](https://github.com/isaacs/rimraf) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [sax@1.2.4](https://github.com/isaacs/sax-js) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [abbrev@1.1.1](https://github.com/isaacs/abbrev-js) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [slide@1.1.6](https://github.com/isaacs/slide-flow-control) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [dezalgo@1.0.3](https://github.com/npm/dezalgo) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [tar@4.4.1](https://github.com/npm/node-tar) from [Isaac Z. Schlueter](mailto:i@izs.me)
-- [@pm2/agent-node@1.0.9](https://github.com/keymetrics/pm2-io-agent-node) from [Keymetrics](mailto:contact@keymetrics.io)
+- [rimraf@2.6.2](https://github.com/isaacs/rimraf) from [Isaac Z. Schlueter](mailto:i@izs.me)
+- [@pm2/agent-node@1.1.0](https://github.com/keymetrics/pm2-io-agent-node) from [Keymetrics](mailto:contact@keymetrics.io)
 - [hosted-git-info@2.7.1](https://github.com/npm/hosted-git-info) from [Rebecca Turner](mailto:me@re-becca.org)
 - [are-we-there-yet@1.1.4](https://github.com/iarna/are-we-there-yet) from Rebecca Turner
 - [aproba@1.2.0](https://github.com/iarna/aproba) from [Rebecca Turner](mailto:me@re-becca.org)
+- [has-unicode@2.0.1](https://github.com/iarna/has-unicode) from [Rebecca Turner](mailto:me@re-becca.org)
+- [gauge@2.7.4](https://github.com/iarna/gauge) from [Rebecca Turner](mailto:me@re-becca.org)
 - [console-control-strings@1.1.0](https://github.com/iarna/console-control-strings) from [Rebecca Turner](mailto:me@re-becca.org)
 - [wide-align@1.1.2](https://github.com/iarna/wide-align) from [Rebecca Turner](mailto:me@re-becca.org)
-- [gauge@2.7.4](https://github.com/iarna/gauge) from [Rebecca Turner](mailto:me@re-becca.org)
-- [has-unicode@2.0.1](https://github.com/iarna/has-unicode) from [Rebecca Turner](mailto:me@re-becca.org)
 - [setprototypeof@1.1.0](https://github.com/wesleytodd/setprototypeof) from Wes Todd
 - [remove-trailing-separator@1.1.0](https://github.com/darsain/remove-trailing-separator) from darsain
 ## MIT
 
 - [js-tokens@3.0.2](https://github.com/lydell/js-tokens) from Simon Lydell
-- [babel-plugin-transform-es2015-shorthand-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-shorthand-properties)
 - [babel-plugin-transform-es2015-spread@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-spread)
 - [babel-plugin-transform-es2015-sticky-regex@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-sticky-regex)
 - [babel-plugin-transform-es2015-template-literals@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-template-literals)
@@ -180,17 +180,17 @@
 - [babel-helper-call-delegate@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-call-delegate)
 - [convert-source-map@1.6.0](https://github.com/thlorenz/convert-source-map) from [Thorsten Lorenz](mailto:thlorenz@gmx.de)
 - [copy-descriptor@0.1.1](https://github.com/jonschlinkert/copy-descriptor) from Jon Schlinkert
-- [core-js@2.5.7](https://github.com/zloirock/core-js)
+- [core-js@2.6.0](https://github.com/zloirock/core-js)
 - [core-util-is@1.0.2](https://github.com/isaacs/core-util-is) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [cosmiconfig@5.0.7](https://github.com/davidtheclark/cosmiconfig) from [David Clark](mailto:david.dave.clark@gmail.com)
-- [cron@1.5.0](https://github.com/kelektiv/node-cron) from [Nick Campbell](mailto:nicholas.j.campbell@gmail.com)
+- [cron@1.6.0](https://github.com/kelektiv/node-cron) from [Nick Campbell](mailto:nicholas.j.campbell@gmail.com)
 - [cross-spawn@5.1.0](https://github.com/IndigoUnited/node-cross-spawn) from [IndigoUnited](mailto:hello@indigounited.com)
 - [cross-spawn@6.0.5](https://github.com/moxystudio/node-cross-spawn) from [André Cruz](mailto:andre@moxy.studio)
 - [cross-var@1.1.0](https://github.com/elijahmanor/cross-var) from Elijah Manor
 - [culvert@0.1.2](https://github.com/creationix/culvert) from [Tim Caswell](mailto:tim@creationix.com)
 - [currently-unhandled@0.4.1](https://github.com/jamestalmage/currently-unhandled) from [James Talmage](mailto:james@talmage.io)
 - [data-uri-to-buffer@1.2.0](https://github.com/TooTallNate/node-data-uri-to-buffer) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
-- [date-fns@1.29.0](https://github.com/date-fns/date-fns) from [Sasha Koss](mailto:koss@nocorp.me)
+- [date-fns@1.30.1](https://github.com/date-fns/date-fns) from [Sasha Koss](mailto:koss@nocorp.me)
 - [debug@2.6.9](https://github.com/visionmedia/debug) from [TJ Holowaychuk](mailto:tj@vision-media.ca)
 - [debug@3.1.0](https://github.com/visionmedia/debug) from [TJ Holowaychuk](mailto:tj@vision-media.ca)
 - [debug@3.2.6](https://github.com/visionmedia/debug) from [TJ Holowaychuk](mailto:tj@vision-media.ca)
@@ -212,7 +212,6 @@
 - [detect-indent@4.0.0](https://github.com/sindresorhus/detect-indent) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [babel-helper-bindify-decorators@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-bindify-decorators)
 - [babel-helper-get-function-arity@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-get-function-arity)
-- [duplexer@0.1.1](https://github.com/Raynos/duplexer) from [Raynos](mailto:raynos2@gmail.com)
 - [elegant-spinner@1.0.1](https://github.com/sindresorhus/elegant-spinner) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [babel-generator@6.26.1](https://github.com/babel/babel/tree/master/packages/babel-generator) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
 - [end-of-stream@1.4.1](https://github.com/mafintosh/end-of-stream) from [Mathias Buus](mailto:mathiasbuus@gmail.com)
@@ -221,7 +220,7 @@
 - [es-to-primitive@1.2.0](https://github.com/ljharb/es-to-primitive) from Jordan Harband
 - [es6-promise@4.2.5](https://github.com/stefanpenner/es6-promise) from Yehuda Katz, Tom Dale, Stefan Penner and contributors
 - [es6-promisify@5.0.0](https://github.com/digitaldesignlabs/es6-promisify) from [Mike Hall](mailto:mikehall314@gmail.com)
-- [xregexp@2.0.0](https://github.com/slevithan/XRegExp) from [Steven Levithan](mailto:steves_list@hotmail.com)
+- [babel-helper-hoist-variables@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-hoist-variables)
 - [escape-string-regexp@1.0.5](https://github.com/sindresorhus/escape-string-regexp) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [babel-core@6.26.3](https://github.com/babel/babel/tree/master/packages/babel-core) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
 - [babel-code-frame@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-code-frame) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
@@ -229,7 +228,6 @@
 - [async@2.6.1](https://github.com/caolan/async) from Caolan McMahon
 - [async-limiter@1.0.0](https://github.com/strml/async-limiter) from Samuel Reed
 - event-loop-inspector@1.2.2 from [Vincent Vallet](mailto:wallet77@gmail.com)
-- [event-stream@3.3.6](https://github.com/dominictarr/event-stream) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
 - [eventemitter2@0.4.14](https://github.com/hij1nx/EventEmitter2) from [hij1nx](mailto:paolo@async.ly)
 - [eventemitter2@4.1.2](https://github.com/hij1nx/EventEmitter2) from [hij1nx](mailto:paolo@async.ly)
 - [eventemitter2@5.0.1](https://github.com/hij1nx/EventEmitter2) from [hij1nx](mailto:paolo@async.ly)
@@ -248,17 +246,15 @@
 - [fill-range@4.0.0](https://github.com/jonschlinkert/fill-range) from Jon Schlinkert
 - [find-up@2.1.0](https://github.com/sindresorhus/find-up) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [find-up@3.0.0](https://github.com/sindresorhus/find-up) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [flatmap-stream@0.1.2](https://github.com/hugeglass/flatmap-stream) from Antonio Macias
 - [follow-redirects@1.5.10](https://github.com/follow-redirects/follow-redirects) from [Ruben Verborgh](mailto:ruben@verborgh.org)
 - [for-in@1.0.2](https://github.com/jonschlinkert/for-in) from Jon Schlinkert
 - [fragment-cache@0.2.1](https://github.com/jonschlinkert/fragment-cache) from Jon Schlinkert
-- [from@0.1.7](https://github.com/dominictarr/from) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
-- [babel-helper-hoist-variables@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-hoist-variables)
 - [babel-helper-optimise-call-expression@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-optimise-call-expression)
+- [babel-helper-regex@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-helper-regex)
 - [fsevents@1.2.4](https://github.com/strongloop/fsevents) from [Philipp Dunkel](mailto:pip@pipobscure.com)
 - [ftp@0.3.10](https://github.com/mscdex/node-ftp) from [Brian White](mailto:mscdex@mscdex.net)
 - [function-bind@1.1.1](https://github.com/Raynos/function-bind) from [Raynos](mailto:raynos2@gmail.com)
-- [babel-helper-regex@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-helper-regex)
+- [babel-helper-remap-async-to-generator@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-remap-async-to-generator)
 - [get-stdin@6.0.0](https://github.com/sindresorhus/get-stdin) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [get-stream@4.1.0](https://github.com/sindresorhus/get-stream) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [get-uri@2.0.2](https://github.com/TooTallNate/node-get-uri) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
@@ -266,34 +262,34 @@
 - [git-node-fs@1.0.0](https://github.com/creationix/git-node-fs)
 - [git-sha1@0.1.2](https://github.com/creationix/git-sha1) from [Tim Caswell](mailto:tim@creationix.com)
 - gkt@1.0.0 from God
-- [babel-helper-remap-async-to-generator@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-remap-async-to-generator)
 - [babel-helper-replace-supers@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helper-replace-supers)
 - [babel-helpers@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-helpers) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
+- [babel-messages@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-messages) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
 - [globals@9.18.0](https://github.com/sindresorhus/globals) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [async-each@1.0.1](https://github.com/paulmillr/async-each) from Paul Miller
 - [has-ansi@2.0.0](https://github.com/sindresorhus/has-ansi) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [has-flag@3.0.0](https://github.com/sindresorhus/has-flag) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [has-symbols@1.0.0](https://github.com/ljharb/has-symbols) from [Jordan Harband](mailto:ljharb@gmail.com)
-- [babel-messages@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-messages) from [Sebastian McKenzie](mailto:sebmck@gmail.com)
+- [babel-plugin-check-es2015-constants@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-check-es2015-constants)
 - [has-value@0.3.1](https://github.com/jonschlinkert/has-value) from Jon Schlinkert
 - [has-value@1.0.0](https://github.com/jonschlinkert/has-value) from Jon Schlinkert
 - [has-values@0.1.4](https://github.com/jonschlinkert/has-values) from Jon Schlinkert
 - [has-values@1.0.0](https://github.com/jonschlinkert/has-values) from Jon Schlinkert
 - [has@1.0.3](https://github.com/tarruda/has) from [Thiago de Arruda](mailto:tpadilha84@gmail.com)
 - [home-or-tmp@2.0.0](https://github.com/sindresorhus/home-or-tmp) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-check-es2015-constants@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-check-es2015-constants)
+- [babel-plugin-syntax-async-functions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-functions)
 - [http-errors@1.6.3](https://github.com/jshttp/http-errors) from [Jonathan Ong](mailto:me@jongleberry.com)
 - [http-proxy-agent@2.1.0](https://github.com/TooTallNate/node-http-proxy-agent) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
 - [https-proxy-agent@2.2.1](https://github.com/TooTallNate/node-https-proxy-agent) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
 - [husky@1.2.0](https://github.com/typicode/husky) from [Typicode](mailto:typicode@gmail.com)
 - [iconv-lite@0.4.21](https://github.com/ashtuchkin/iconv-lite) from [Alexander Shtuchkin](mailto:ashtuchkin@gmail.com)
 - [iconv-lite@0.4.23](https://github.com/ashtuchkin/iconv-lite) from [Alexander Shtuchkin](mailto:ashtuchkin@gmail.com)
-- [babel-plugin-syntax-async-functions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-functions)
+- [babel-plugin-syntax-async-generators@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-generators)
 - [import-fresh@2.0.0](https://github.com/sindresorhus/import-fresh) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [indent-string@3.2.0](https://github.com/sindresorhus/indent-string) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-syntax-async-generators@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-async-generators)
-- [ast-types@0.11.6](https://github.com/benjamn/ast-types) from [Ben Newman](mailto:bn@cs.stanford.edu)
 - [babel-plugin-syntax-class-constructor-call@6.18.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-class-constructor-call)
+- [ast-types@0.11.7](https://github.com/benjamn/ast-types) from [Ben Newman](mailto:bn@cs.stanford.edu)
+- [babel-plugin-syntax-class-properties@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-class-properties)
 - [interpret@1.1.0](https://github.com/tkellen/node-interpret) from Tyler Kellen
 - [invariant@2.2.4](https://github.com/zertosh/invariant) from [Andres Suarez](mailto:zertosh@gmail.com)
 - [ip@1.1.5](https://github.com/indutny/node-ip) from [Fedor Indutny](mailto:fedor@indutny.com)
@@ -313,7 +309,7 @@
 - [is-directory@0.3.1](https://github.com/jonschlinkert/is-directory) from Jon Schlinkert
 - [is-extendable@0.1.1](https://github.com/jonschlinkert/is-extendable) from Jon Schlinkert
 - [is-extendable@1.0.1](https://github.com/jonschlinkert/is-extendable) from Jon Schlinkert
-- [babel-plugin-syntax-class-properties@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-class-properties)
+- [babel-plugin-syntax-decorators@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-decorators)
 - [is-finite@1.0.2](https://github.com/sindresorhus/is-finite) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [is-fullwidth-code-point@1.0.0](https://github.com/sindresorhus/is-fullwidth-code-point) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [is-fullwidth-code-point@2.0.0](https://github.com/sindresorhus/is-fullwidth-code-point) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -331,7 +327,7 @@
 - [is@3.2.1](https://github.com/enricomarino/is) from Enrico Marino
 - [isarray@0.0.1](https://github.com/juliangruber/isarray) from [Julian Gruber](mailto:mail@juliangruber.com)
 - [isarray@1.0.0](https://github.com/juliangruber/isarray) from [Julian Gruber](mailto:mail@juliangruber.com)
-- [babel-plugin-syntax-decorators@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-decorators)
+- [babel-plugin-syntax-do-expressions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-do-expressions)
 - [isobject@2.1.0](https://github.com/jonschlinkert/isobject) from Jon Schlinkert
 - [isobject@3.0.1](https://github.com/jonschlinkert/isobject) from Jon Schlinkert
 - [js-git@0.7.8](https://github.com/creationix/js-git) from [Tim Caswell](mailto:tim@creationix.com)
@@ -340,9 +336,9 @@
 - [jsesc@0.5.0](https://github.com/mathiasbynens/jsesc) from Mathias Bynens
 - [jsesc@1.3.0](https://github.com/mathiasbynens/jsesc) from Mathias Bynens
 - [json-parse-better-errors@1.0.2](https://github.com/zkat/json-parse-better-errors) from [Kat Marchán](mailto:kzm@zkat.tech)
-- [babel-plugin-syntax-do-expressions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-do-expressions)
+- [babel-plugin-syntax-dynamic-import@6.18.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-dynamic-import)
 - [json5@0.5.1](https://github.com/aseemk/json5) from [Aseem Kishore](mailto:aseem.kishore@gmail.com)
-- [ws@6.1.2](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
+- [xregexp@2.0.0](https://github.com/slevithan/XRegExp) from [Steven Levithan](mailto:steves_list@hotmail.com)
 - [kind-of@3.2.2](https://github.com/jonschlinkert/kind-of) from Jon Schlinkert
 - [kind-of@4.0.0](https://github.com/jonschlinkert/kind-of) from Jon Schlinkert
 - [kind-of@5.1.0](https://github.com/jonschlinkert/kind-of) from Jon Schlinkert
@@ -369,22 +365,21 @@
 - [log-update@2.3.0](https://github.com/sindresorhus/log-update) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [loose-envify@1.4.0](https://github.com/zertosh/loose-envify) from [Andres Suarez](mailto:zertosh@gmail.com)
 - [loud-rejection@1.6.0](https://github.com/sindresorhus/loud-rejection) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-syntax-dynamic-import@6.18.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-dynamic-import)
+- [babel-plugin-syntax-exponentiation-operator@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-exponentation-operator)
 - [map-cache@0.2.2](https://github.com/jonschlinkert/map-cache) from Jon Schlinkert
 - [map-obj@1.0.1](https://github.com/sindresorhus/map-obj) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [map-obj@2.0.0](https://github.com/sindresorhus/map-obj) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [map-stream@0.0.7](https://github.com/dominictarr/map-stream) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
 - [map-visit@1.0.0](https://github.com/jonschlinkert/map-visit) from Jon Schlinkert
 - [memorystream@0.3.1](https://github.com/JSBizon/node-memorystream) from Dmitry Nizovtsev
 - [meow@5.0.0](https://github.com/sindresorhus/meow) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [methods@1.1.2](https://github.com/jshttp/methods)
 - [micromatch@3.1.10](https://github.com/micromatch/micromatch) from Jon Schlinkert
 - [mimic-fn@1.2.0](https://github.com/sindresorhus/mimic-fn) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-syntax-exponentiation-operator@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-exponentation-operator)
+- [babel-plugin-syntax-export-extensions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-export-extensions)
 - [minimist-options@3.0.2](https://github.com/vadimdemedes/minimist-options) from [Vadim Demedes](mailto:vdemedes@gmail.com)
 - [minimist@0.0.8](https://github.com/substack/minimist) from [James Halliday](mailto:mail@substack.net)
 - [minimist@1.2.0](https://github.com/substack/minimist) from [James Halliday](mailto:mail@substack.net)
-- [babel-plugin-syntax-export-extensions@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-export-extensions)
+- [babel-plugin-syntax-function-bind@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-function-bind)
 - [minizlib@1.1.0](https://github.com/isaacs/minizlib) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [mixin-deep@1.3.1](https://github.com/jonschlinkert/mixin-deep) from Jon Schlinkert
 - [mkdirp@0.5.1](https://github.com/substack/node-mkdirp) from [James Halliday](mailto:mail@substack.net)
@@ -392,7 +387,7 @@
 - [moment@2.22.2](https://github.com/moment/moment) from [Iskren Ivov Chernev](mailto:iskren.chernev@gmail.com)
 - [ms@2.0.0](https://github.com/zeit/ms)
 - [ms@2.1.1](https://github.com/zeit/ms)
-- [babel-plugin-syntax-function-bind@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-function-bind)
+- [babel-plugin-syntax-object-rest-spread@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread)
 - [nan@2.11.1](https://github.com/nodejs/nan)
 - [nanomatch@1.2.13](https://github.com/micromatch/nanomatch) from Jon Schlinkert
 - [needle@2.2.0](https://github.com/tomas/needle) from [Tomás Pollak](mailto:tomas@forkhq.com)
@@ -400,14 +395,14 @@
 - [netmask@1.0.6](https://github.com/rs/node-netmask) from [Olivier Poitrey](mailto:rs@dailymotion.com)
 - [nice-try@1.0.5](https://github.com/electerious/nice-try)
 - [asap@2.0.6](https://github.com/kriskowal/asap)
-- [babel-plugin-syntax-object-rest-spread@6.13.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-object-rest-spread)
+- [babel-plugin-syntax-trailing-function-commas@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-trailing-function-commas)
 - [arrify@1.0.1](https://github.com/sindresorhus/arrify) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [normalize-path@2.1.1](https://github.com/jonschlinkert/normalize-path) from Jon Schlinkert
-- [babel-plugin-syntax-trailing-function-commas@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-trailing-function-commas)
 - [babel-plugin-transform-async-generator-functions@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-async-generator-functions)
-- [npm-run-all@4.1.3](https://github.com/mysticatea/npm-run-all) from Toru Nagashima
-- [npm-run-path@2.0.2](https://github.com/sindresorhus/npm-run-path) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [babel-plugin-transform-async-to-generator@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-async-to-generator)
+- [npm-run-all@4.1.5](https://github.com/mysticatea/npm-run-all) from Toru Nagashima
+- [npm-run-path@2.0.2](https://github.com/sindresorhus/npm-run-path) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
+- [babel-plugin-transform-class-constructor-call@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-constructor-call)
 - [nssocket@0.6.0](https://github.com/foreverjs/nssocket) from [Charlie Robbins](mailto:charlie.robbins@gmail.com)
 - [number-is-nan@1.0.1](https://github.com/sindresorhus/number-is-nan) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [object-assign@4.1.1](https://github.com/sindresorhus/object-assign) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -415,12 +410,12 @@
 - [object-keys@1.0.12](https://github.com/ljharb/object-keys) from [Jordan Harband](mailto:ljharb@gmail.com)
 - [object-visit@1.0.1](https://github.com/jonschlinkert/object-visit) from Jon Schlinkert
 - [object.pick@1.3.0](https://github.com/jonschlinkert/object.pick) from Jon Schlinkert
-- [babel-plugin-transform-class-constructor-call@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-constructor-call)
+- [babel-plugin-transform-class-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-properties)
 - [onetime@2.0.1](https://github.com/sindresorhus/onetime) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [optionator@0.8.2](https://github.com/gkz/optionator) from [George Zahariev](mailto:z@georgezahariev.com)
 - [os-homedir@1.0.2](https://github.com/sindresorhus/os-homedir) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [os-tmpdir@1.0.2](https://github.com/sindresorhus/os-tmpdir) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-transform-class-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-properties)
+- [babel-plugin-transform-decorators@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-decorators)
 - [p-finally@1.0.0](https://github.com/sindresorhus/p-finally) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [p-limit@1.3.0](https://github.com/sindresorhus/p-limit) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [p-limit@2.0.0](https://github.com/sindresorhus/p-limit) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -440,7 +435,7 @@
 - [path-key@2.0.1](https://github.com/sindresorhus/path-key) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [path-parse@1.0.6](https://github.com/jbgutierrez/path-parse) from [Javier Blanco](mailto:http://jbgutierrez.info)
 - [path-type@3.0.0](https://github.com/sindresorhus/path-type) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [ws@5.2.2](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
+- [pidtree@0.3.0](https://github.com/simonepri/pidtree) from [Simone Primarosa](mailto:simonepri@outlook.com)
 - [pidusage@2.0.17](https://github.com/soyuka/pidusage) from soyuka
 - [pify@3.0.0](https://github.com/sindresorhus/pify) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [pkg-dir@3.0.0](https://github.com/sindresorhus/pkg-dir) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -448,7 +443,7 @@
 - [pm2-axon-rpc@0.5.1](https://github.com/unitech/pm2-axon-rpc) from [TJ Holowaychuk](mailto:tj@learnboost.com)
 - [pm2-axon@3.3.0](https://github.com/visionmedia/axon) from [TJ Holowaychuk](mailto:tj@vision-media.ca)
 - [pm2-deploy@0.3.10](https://github.com/Unitech/pm2-deploy) from Alexandre Strzelewicz
-- [ws@3.3.3](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
+- [ws@6.1.2](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
 - [array-unique@0.3.2](https://github.com/jonschlinkert/array-unique) from Jon Schlinkert
 - [posix-character-classes@0.1.1](https://github.com/jonschlinkert/posix-character-classes) from Jon Schlinkert
 - [prelude-ls@1.1.2](https://github.com/gkz/prelude-ls) from [George Zahariev](mailto:z@georgezahariev.com)
@@ -457,21 +452,20 @@
 - [promptly@2.2.0](https://github.com/IndigoUnited/node-promptly) from [IndigoUnited](mailto:hello@indigounited.com)
 - [proxy-agent@3.0.3](https://github.com/TooTallNate/node-proxy-agent) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
 - [proxy-from-env@1.0.0](https://github.com/Rob--W/proxy-from-env) from [Rob Wu](mailto:rob@robwu.nl)
-- [ps-tree@1.1.0](https://github.com/indexzero/ps-tree) from [Charlie Robbins](mailto:charlie.robbins@gmail.com)
-- [babel-plugin-transform-decorators@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-decorators)
+- [babel-plugin-transform-do-expressions@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-do-expressions)
 - [pump@3.0.0](https://github.com/mafintosh/pump) from [Mathias Buus Madsen](mailto:mathiasbuus@gmail.com)
 - [quick-lru@1.1.0](https://github.com/sindresorhus/quick-lru) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [raw-body@2.3.3](https://github.com/stream-utils/raw-body) from [Jonathan Ong](mailto:me@jongleberry.com)
 - [array-reduce@0.0.0](https://github.com/substack/array-reduce) from [James Halliday](mailto:mail@substack.net)
-- [babel-plugin-transform-do-expressions@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-do-expressions)
 - [babel-plugin-transform-es2015-arrow-functions@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-arrow-functions)
+- [babel-plugin-transform-es2015-block-scoped-functions@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-block-scoped-functions)
 - [read-pkg-up@3.0.0](https://github.com/sindresorhus/read-pkg-up) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [read-pkg@3.0.0](https://github.com/sindresorhus/read-pkg) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [read-pkg@4.0.1](https://github.com/sindresorhus/read-pkg) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-transform-es2015-block-scoped-functions@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-block-scoped-functions)
+- [babel-plugin-transform-es2015-block-scoping@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-block-scoping)
 - [readable-stream@1.1.14](https://github.com/isaacs/readable-stream) from [Isaac Z. Schlueter](mailto:i@izs.me)
 - [readable-stream@2.3.6](https://github.com/nodejs/readable-stream)
-- [babel-plugin-transform-es2015-block-scoping@6.26.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-block-scoping)
+- [babel-plugin-transform-es2015-classes@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-classes)
 - [readdirp@2.2.1](https://github.com/paulmillr/readdirp) from [Thorsten Lorenz](mailto:thlorenz@gmx.de)
 - [rechoir@0.6.2](https://github.com/tkellen/node-rechoir) from Tyler Kellen
 - [redent@2.0.0](https://github.com/sindresorhus/redent) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -482,7 +476,7 @@
 - [regexpu-core@2.0.0](https://github.com/mathiasbynens/regexpu-core) from Mathias Bynens
 - [regjsgen@0.2.0](https://github.com/d10/regjsgen) from [Benjamin Tan](mailto:demoneaux@gmail.com)
 - [array-find-index@1.0.2](https://github.com/sindresorhus/array-find-index) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
-- [babel-plugin-transform-es2015-classes@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-classes)
+- [babel-plugin-transform-es2015-computed-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-computed-properties)
 - [repeat-element@1.1.3](https://github.com/jonschlinkert/repeat-element) from Jon Schlinkert
 - [repeat-string@1.6.1](https://github.com/jonschlinkert/repeat-string) from Jon Schlinkert
 - [repeating@2.0.1](https://github.com/sindresorhus/repeating) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
@@ -491,31 +485,31 @@
 - [resolve@1.8.1](https://github.com/browserify/resolve) from [James Halliday](mailto:mail@substack.net)
 - [restore-cursor@2.0.0](https://github.com/sindresorhus/restore-cursor) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [ret@0.1.15](https://github.com/fent/ret.js) from Roly Fentanes
-- [babel-plugin-transform-es2015-computed-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-computed-properties)
+- [babel-plugin-transform-es2015-destructuring@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-destructuring)
 - [run-node@1.0.0](https://github.com/sindresorhus/run-node) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [array-filter@0.0.1](https://github.com/juliangruber/array-filter) from [Julian Gruber](mailto:mail@juliangruber.com)
 - [safe-buffer@5.1.1](https://github.com/feross/safe-buffer) from [Feross Aboukhadijeh](mailto:feross@feross.org)
 - [safe-buffer@5.1.2](https://github.com/feross/safe-buffer) from [Feross Aboukhadijeh](mailto:feross@feross.org)
 - [safe-regex@1.1.0](https://github.com/substack/safe-regex) from [James Halliday](mailto:mail@substack.net)
 - [safer-buffer@2.1.2](https://github.com/ChALkeR/safer-buffer) from [Nikita Skovoroda](mailto:chalkerx@gmail.com)
-- [babel-plugin-transform-es2015-destructuring@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-destructuring)
+- [babel-plugin-transform-es2015-duplicate-keys@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-duplicate-keys)
 - [semver-compare@1.0.0](https://github.com/substack/semver-compare) from [James Halliday](mailto:mail@substack.net)
 - [arr-union@3.1.0](https://github.com/jonschlinkert/arr-union) from Jon Schlinkert
 - [arr-flatten@1.1.0](https://github.com/jonschlinkert/arr-flatten) from Jon Schlinkert
 - [arr-diff@4.0.0](https://github.com/jonschlinkert/arr-diff) from Jon Schlinkert
 - [set-value@0.4.3](https://github.com/jonschlinkert/set-value) from Jon Schlinkert
 - [set-value@2.0.0](https://github.com/jonschlinkert/set-value) from Jon Schlinkert
-- [babel-plugin-transform-es2015-duplicate-keys@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-duplicate-keys)
+- [babel-plugin-transform-es2015-for-of@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-for-of)
 - [shebang-command@1.2.0](https://github.com/kevva/shebang-command) from [Kevin Martensson](mailto:kevinmartensson@gmail.com)
 - [shebang-regex@1.0.0](https://github.com/sindresorhus/shebang-regex) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [shell-quote@1.6.1](https://github.com/substack/node-shell-quote) from [James Halliday](mailto:mail@substack.net)
 - [argparse@1.0.10](https://github.com/nodeca/argparse)
-- [babel-plugin-transform-es2015-for-of@6.23.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-for-of)
 - [babel-plugin-transform-es2015-function-name@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-function-name)
+- [babel-plugin-transform-es2015-literals@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-literals)
 - [slash@1.0.0](https://github.com/sindresorhus/slash) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [slash@2.0.0](https://github.com/sindresorhus/slash) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [slice-ansi@0.0.4](https://github.com/chalk/slice-ansi) from [David Caccavella](mailto:threedeecee@gmail.com)
-- [babel-plugin-transform-es2015-literals@6.22.0](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-literals)
+- [babel-plugin-transform-es2015-modules-amd@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-modules-amd)
 - [smart-buffer@4.0.1](https://github.com/JoshGlazebrook/smart-buffer) from Josh Glazebrook
 - [snapdragon-node@2.1.1](https://github.com/jonschlinkert/snapdragon-node) from Jon Schlinkert
 - [snapdragon-util@3.0.1](https://github.com/jonschlinkert/snapdragon-util) from Jon Schlinkert
@@ -526,25 +520,23 @@
 - [source-map-support@0.4.18](https://github.com/evanw/node-source-map-support)
 - [source-map-support@0.5.9](https://github.com/evanw/node-source-map-support)
 - [source-map-url@0.4.0](https://github.com/lydell/source-map-url) from Simon Lydell
-- [babel-plugin-transform-es2015-modules-amd@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-modules-amd)
+- [babel-plugin-transform-es2015-modules-commonjs@6.26.2](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-modules-commonjs)
 - [any-observable@0.3.0](https://github.com/sindresorhus/any-observable) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [spdx-compare@1.0.0](https://github.com/kemitchell/spdx-compare.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
 - [ansi-styles@3.2.1](https://github.com/chalk/ansi-styles) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [ansi-styles@2.2.1](https://github.com/chalk/ansi-styles) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [ansi-regex@3.0.0](https://github.com/chalk/ansi-regex) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [spdx-expression-parse@3.0.0](https://github.com/jslicense/spdx-expression-parse.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
-- [babel-plugin-transform-es2015-modules-commonjs@6.26.2](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-modules-commonjs)
+- [ws@5.2.2](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
 - [ansi-regex@2.1.1](https://github.com/chalk/ansi-regex) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [ansi-escapes@3.1.0](https://github.com/sindresorhus/ansi-escapes) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [spdx-satisfies@4.0.0](https://github.com/kemitchell/spdx-satisfies.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
 - [spdx@0.5.2](https://github.com/kemitchell/spdx.js) from [Kyle E. Mitchell](mailto:kyle@kemitchell.com)
 - [split-string@3.1.0](https://github.com/jonschlinkert/split-string) from Jon Schlinkert
-- [split@1.0.1](https://github.com/dominictarr/split) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
 - [amp@0.3.1](https://github.com/visionmedia/node-amp)
 - [amp-message@0.1.2](https://github.com/visionmedia/node-amp-message)
 - [static-extend@0.1.2](https://github.com/jonschlinkert/static-extend) from Jon Schlinkert
 - [statuses@1.5.0](https://github.com/jshttp/statuses)
-- [stream-combiner@0.2.2](https://github.com/dominictarr/stream-combiner) from ['Dominic Tarr'](mailto:dominic.tarr@gmail.com)
 - [string-width@1.0.2](https://github.com/sindresorhus/string-width) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [string-width@2.1.1](https://github.com/sindresorhus/string-width) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [string.prototype.padend@3.0.0](https://github.com/es-shims/String.prototype.padEnd) from Jordan Harband
@@ -560,7 +552,6 @@
 - [supports-color@5.5.0](https://github.com/chalk/supports-color) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [symbol-observable@1.2.0](https://github.com/blesh/symbol-observable) from [Ben Lesh](mailto:ben@benlesh.com)
 - [babel-plugin-transform-es2015-modules-systemjs@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-modules-systemjs)
-- [through@2.3.8](https://github.com/dominictarr/through) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
 - [thunkify@2.1.2](https://github.com/visionmedia/node-thunkify)
 - [to-fast-properties@1.0.3](https://github.com/sindresorhus/to-fast-properties) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [to-object-path@0.3.0](https://github.com/jonschlinkert/to-object-path) from Jon Schlinkert
@@ -570,7 +561,7 @@
 - [trim-newlines@2.0.0](https://github.com/sindresorhus/trim-newlines) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [trim-right@1.0.1](https://github.com/sindresorhus/trim-right) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
 - [agent-base@4.2.1](https://github.com/TooTallNate/node-agent-base) from [Nathan Rajlich](mailto:nathan@tootallnate.net)
-- [wrap-ansi@3.0.1](https://github.com/chalk/wrap-ansi) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
+- [ws@3.3.3](https://github.com/websockets/ws) from [Einar Otto Stangvik](mailto:einaros@gmail.com)
 - [type-check@0.3.2](https://github.com/gkz/type-check) from [George Zahariev](mailto:z@georgezahariev.com)
 - [ultron@1.1.1](https://github.com/unshiftio/ultron) from Arnout Kazemier
 - [union-value@1.0.0](https://github.com/jonschlinkert/union-value) from Jon Schlinkert
@@ -589,6 +580,8 @@
 - [babel-plugin-transform-es2015-object-super@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-object-super)
 - [babel-plugin-transform-es2015-parameters@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-parameters)
 - [wordwrap@1.0.0](https://github.com/substack/node-wordwrap) from [James Halliday](mailto:mail@substack.net)
+- [wrap-ansi@3.0.1](https://github.com/chalk/wrap-ansi) from [Sindre Sorhus](mailto:sindresorhus@gmail.com)
+- [babel-plugin-transform-es2015-shorthand-properties@6.24.1](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-es2015-shorthand-properties)
 - [is-extglob@2.1.1](https://github.com/jonschlinkert/is-extglob) from Jon Schlinkert
 ## MIT*
 
@@ -596,9 +589,6 @@
 - escape-regexp@0.0.1
 - [cli-table-redemption@1.0.1](https://github.com/Keymetrics/cli-table) from [Guillermo Rauch](mailto:guillermo@learnboost.com)
 - [charm@0.1.2](https://github.com/substack/node-charm) from [James Halliday](mailto:mail@substack.net)
-## MIT,Apache2
-
-- [pause-stream@0.0.11](https://github.com/dominictarr/pause-stream) from [Dominic Tarr](mailto:dominic.tarr@gmail.com)
 ## Public Domain
 
 - [jsonify@0.0.0](https://github.com/substack/jsonify) from Douglas Crockford

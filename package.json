@@ -1,6 +1,6 @@
 {
     "name": "@a11ygato/platform",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "a11ygato suite of tools to analyze and monitor accessibility results",
     "main": "pally.config.js",
     "scripts": {
@@ -14,7 +14,7 @@
         "lint": "cd modules/audit-engine && npm run lint && cd ../cli && npm run lint && cd ../webservice && npm run lint && cd ../dashboard && npm run lint",
         "pull": "git pull && npm ci && npm run build",
         "build": "cd modules/dashboard && npm run build --script-shell bash",
-        "release": "cross-var ./release.js $npm_package_new_version",
+        "release": "cross-var ./release.js $npm_config_new_version",
         "dist": "./publish.js",
         "clean": "rm -f package-lock.json && rm -rf node_modules && rm -rf modules/*/node_modules && rm -f modules/*/package-lock.json"
     },

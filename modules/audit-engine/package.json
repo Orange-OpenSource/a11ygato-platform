@@ -1,6 +1,6 @@
 {
     "name": "@a11ygato/audit-engine",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "@a11ygato/audit-engine is a node API to create accessibility reports using the axe-core engine into a Chrome container",
     "main": "lib/AuditEngine.js",
     "keywords": [
