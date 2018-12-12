@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+.npmrc
+npm-debug.log
+.DS_Store
+public/

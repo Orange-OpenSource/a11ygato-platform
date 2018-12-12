@@ -1,0 +1,69 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see http://www.gnu.org/licenses.
+}}
+<div class="col-xs-12 clearfix">
+	<div class="graph-container graph-spacer ruled">
+		<div data-role="graph" class="graph"></div>
+		<div class="row">
+			<ul class="list-unstyled floated-list series-checkboxes clearfix crunch-bottom col-md-3 col-sm-6 col-xs-12" data-role="series-checkboxes"></ul>
+		</div>
+		<button data-role='zoom-reset' class="btn btn-xs btn-primary pull-right btn-reset hidden">Reset Zoom <i class="glyphicon glyphicon-zoom-out"></i></button>
+	</div>
+</div>
+
+<div class="col-xs-12 hidden">
+	<div class="graph-spacer ruled">
+		<table id="graph-data" class="table graph-table" summary="Accessibility results from pa11y for this page">
+			<caption>pa11y results for this URL</caption>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th class="text-center">KPI</th>
+					<th class="text-center">Errors</th>
+					<th class="text-center">Elements</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#results}}
+				<tr data-role="url-stats">
+					<td data-value="{{date-timestamp date}}" data-role="date">{{date-format date format="lll"}}</td>
+					<td class="text-center" data-label="kpi">{{kpi}}</td>
+					<td class="text-center" data-label="error">{{count.error}}</td>
+					<td class="text-center" data-label="numElements">{{numElements}}</td>
+				</tr>
+			{{/results}}
+			</tbody>
+		</table>
+	</div>
+</div>

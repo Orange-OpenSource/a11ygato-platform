@@ -1,0 +1,80 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see http://www.gnu.org/licenses.
+}}
+
+<ul class="list-unstyled clearfix col-xs-12 crunch-bottom">
+	<li class="task-card">
+		{{#if readonly}}
+			<span class="well task-card-link crunch-bottom add-task">
+				<p class="h3 crunch">Add new URL</p>
+				<p class="supersize-me crunch">+</p>
+			</span>
+		{{else}}
+			<a class="well task-card-link crunch-bottom add-task" data-role="add-task" data-test="add-task" href="/new?type=url">
+				<p class="h3 crunch">Add new URL</p>
+				<p class="supersize-me crunch">+</p>
+			</a>
+		{{/if}}
+	</li>
+	{{#each tasks}}
+		<li class="task-card" data-test="task" data-role="task" data-keywords="{{lowercase name}} {{simplify-url url}}">
+			<a class="flex-container well task-card-link crunch-bottom" title="Details for URL {{simplify-url url}}" href="{{href}}">
+				<div class="task-card-link__name text-overflow">
+                    <h2 class="h2">{{name}}</h2>
+                    {{#if lastResult}}
+                    <p class="last-run">Last run {{date-format lastResult.date format="lll"}}</p>
+                    {{/if}}
+                </div>
+                {{#lastResult}}
+                <div class="task-card-link__score task-stats flex-container">
+                    <div class="warning task-stats__item" title="KPI ({{kpi}})">{{kpi}}<span class="stat-type">KPI</span></div>
+                    <div class="danger task-stats__item" title="Number of errors ({{count.error}})">{{count.error}}<span class="stat-type">Errors</span></div>
+                    <div class="info last task-stats__item" title="Number of elements ({{numElements}})">{{numElements}}<span class="stat-type">Elements</span></div>
+                </div>
+                {{/lastResult}}
+			</a>
+			{{#unless ../readonly}}
+				<div class="btn-group options-button text-right">
+						<button type="button" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown"><span class="sr-only">Options</span><span class="glyphicon glyphicon-cog"></span></button>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li><a href="{{href}}/edit">Edit this task</a></li>
+							<li><a href="{{href}}/delete">Delete this task</a></li>
+							<li class="divider"></li>
+							<li><a href="{{href}}/run" data-test="run-task">Run pa11y</a></li>
+						</ul>
+					</div>
+			{{/unless}}
+		</li>
+	{{/each}}
+</ul>

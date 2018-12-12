@@ -1,0 +1,16 @@
+
+# Generated npm files
+node_modules
+npm-debug.log
+
+# Generated module files
+phantomjsdriver.log
+
+# Webstorm IDE files
+.idea/
+
+# Publishing
+.npmrc
+
+# macOS files
+.DS_Store

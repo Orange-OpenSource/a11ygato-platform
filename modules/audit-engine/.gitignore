@@ -1,0 +1,18 @@
+
+# Generated npm files
+node_modules
+npm-debug.log
+tmp/
+.DS_Store
+
+# Webstorm IDE files
+.idea/
+
+# Audit generated files
+public/
+
+# For NPM publishing
+.npmrc
+
+
+

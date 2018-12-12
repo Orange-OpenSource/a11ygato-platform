@@ -1,0 +1,226 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<form role="form" class="col-md-12 task-form" id="scenario-form" action="{{formAction}}" method="post" data-test="new-url-form">
+
+    <div class="form-group clearfix">
+        <div class="panel panel-default">
+            <div class="panel-heading"><label for="scenario-task-name">Name</label></div>
+            <div class="panel-body">
+                <input class="form-control" id="scenario-task-name" type="text" required placeholder="e.g. Orange FR" name="name" value="{{task.name}}"
+                       aria-describedby="scenario-describe-name"
+                       oninput="document.querySelector('.js-task__title').innerText = this.value; document.title = this.value;"/>
+            </div>
+            <div class="panel-footer" id="scenario-describe-name">
+                <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                A meaningful name to describe this audit
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label class="flr scenario-selector-label label label-info" for="scenario-selector" aria-describedby="describe-scenario">Browse ...</label>
+                <input type="file" accept="text/javascript" class="sr-only" hidden="true" id="scenario-selector">
+                <label for="task-scenario">Scenario</label>
+            </div>
+            <div class="panel-body">
+                <pre class="form-control" id="scenario-editor" type="text" aria-describedby="describe-scenario">Loading…</pre>
+                <textarea id="task-scenario" name="scenario" class="dn" aria-hidden="true">{{task.scenario}}</textarea>
+                <input class="dn" aria-hidden="true" type="hidden" name="type" value="scenario"/>
+            </div>
+            <div class="panel-footer" id="describe-scenario">
+                <div class="flex-row flex-row--justified">
+                    <div>
+                        <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                        Editor for complex scenarii that can be expressed with <a href="https://try-puppeteer.appspot.com/" target="_blank" rel="noopener">Puppeteer</a>
+                        code.
+                    </div>
+                    <div>
+                        <div>
+                            <span class="panel-footer__icon glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                            Press <span class="keyboard-key">F11</span> to switch to fullscreen mode (<a
+                            href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts" target="_blank" rel="noopener">more shorcuts</a>)
+                        </div>
+                        <div class="text-right">
+                            <a data-toggle="collapse" href="#scenario-help" aria-expanded="false" aria-controls="scenario-help">Show more…</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="scenario-help">{{> task-form/scenario-help}}</div>
+            </div>
+        </div>
+    </div>
+
+    {{> task-form/cron type='scenario'}}
+
+    {{> task-form/action-bar type='scenario'}}
+
+</form>
+
+
+<script src="/ace.js?v={{version}}" defer></script>
+<script src="/beautify.min.js?v={{version}}" defer></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', domReady, { passive:true });
+
+    function domReady() {
+
+        var firstContent = document.getElementById('task-scenario').innerText;
+
+        editor = ace.edit('scenario-editor');
+        editor.setTheme('ace/theme/xcode');
+        editor.setFadeFoldWidgets(true);
+        editor.setShowPrintMargin(false);
+        editor.getSession().setTabSize(4);
+        editor.getSession().setUseSoftTabs(true);
+        editor.getSession().setMode('ace/mode/javascript');
+        editor.getSession().setUseWorker(false);
+        editor.$blockScrolling = Infinity;
+
+        editor.setValue(firstContent);
+
+        beautifyCode();
+
+        var dom = ace.require('ace/lib/dom');
+
+        // Keyboard shorcut to toggle fullscreen editing
+        editor.commands.addCommand({
+            name:'Toggle Fullscreen',
+            bindKey:{ win:'F11', mac:'F11' },
+            exec:toggleFullscreen
+        });
+
+        // Keyboard shorcut to toggle fullscreen editing
+        editor.commands.addCommand({
+            name:'Beautify code',
+            bindKey:{ win:'Ctrl-Alt-F', mac:'Command-Alt-L' },
+            exec:beautifyCode
+        });
+
+        // Keyboard shorcut to submit form
+        editor.commands.addCommand({
+            name:'Submit Form',
+            bindKey:{ win:'Ctrl-Enter', mac:'Command-Enter' },
+            exec:function() { submitForm(); }
+        });
+
+        // Intercept default form submission in order to update the scenario property and then submit manually.
+        var form     = document.getElementById('scenario-form');
+        var textarea = document.getElementById('task-scenario');
+        form.addEventListener('submit', submitForm, false);
+
+        // When the user drag a text file anywhere in the window, we will replace the ace editor with the content of the file.
+        document.addEventListener('drop', function(event) {
+            // We don't want the navigator to replace the content of the page with the dragged content
+            event.preventDefault();
+
+            // Treating only the first file if there is several
+            var files = event.dataTransfer.files;
+            if(files && files.length && files[0].type){
+                var file = files[0];
+                file.type.includes('javascript')
+                    ? loadFileInEditor(file)
+                    : console.warn('Wrong file format: %s. Expecting a javascript file.', file.type);
+            }
+            else{
+                console.warn('Files dragged not recognized by browser');
+            }
+
+        }, true);
+
+        // Mandatory to override the default behavior and make the whole page a drop spot as specified in the spec.
+        document.addEventListener('dragover', preventDefault, true);
+
+        var fileSelector = document.querySelector('#scenario-selector');
+        fileSelector.addEventListener('change', function() {
+            console.log('files:', this.files);
+            var file = this.files[0];
+            if(file.type.includes('javascript')) loadFileInEditor(file);
+        }, false);
+
+        ///////////
+
+        function toggleFullscreen(editor) {
+            var fullScreen = dom.toggleCssClass(document.body, 'fullScreen');
+            dom.setCssClass(editor.container, 'fullScreen', fullScreen);
+            editor.setAutoScrollEditorIntoView(!fullScreen);
+            editor.resize();
+        }
+
+        function submitForm(event) {
+            event && event.preventDefault();
+            textarea.value = editor.getValue();
+            form.submit();
+        }
+
+        function beautifyCode() {
+            var position = editor.getCursorPosition();
+            var options = {
+                "indent_size": "4",
+                "indent_char": " ",
+                "max_preserve_newlines": "2",
+                "preserve_newlines": true,
+                "keep_array_indentation": true,
+                "break_chained_methods": false,
+                "indent_scripts": "normal",
+                "brace_style": "collapse",
+                "space_before_conditional": true,
+                "unescape_strings": false,
+                "jslint_happy": false,
+                "end_with_newline": true,
+                "wrap_line_length": "0",
+                "indent_inner_html": false,
+                "comma_first": false,
+                "e4x": false
+            };
+            editor.setValue(js_beautify(editor.getValue(), options));
+            editor.moveCursorToPosition(position);
+            editor.clearSelection();
+        }
+
+        // Massive selfishness because I know I'm the only one needing the info.
+        function preventDefault(event) {
+            event.preventDefault();
+            //event.stopPropagation();
+            //event.stopImmediatePropagation();
+        }
+
+        // Read file content from disk and add its content into the editor.
+        function loadFileInEditor(file) {
+            return new Promise(function(resolve, reject) {
+                console.log('Reading file', file.name, '...');
+                console.log('File:', file);
+                var reader = new FileReader();
+                reader.readAsText(file);
+                reader.addEventListener('load', function() {
+                    console.log('Content:', reader.result);
+                    editor.setValue(reader.result);
+                    editor.scrollToLine(0, false, false);
+                    editor.clearSelection();
+                    resolve();
+                }, { once:true });
+                reader.addEventListener('error', reject, false);
+            });
+        }
+
+    }
+
+</script>

@@ -1,0 +1,113 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see http://www.gnu.org/licenses.
+}}
+{{#content "title"}}pa11y-dashboard{{/content}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Task filter
+
+        var $taskLists = $('[data-control=task-list]');
+        $taskLists.each(function() {
+            initTaskFilter($(this));
+        });
+
+        function initTaskFilter($container) {
+            var $tasks = $container.find('[data-role=task]');
+            initTaskFilterInput($container, $tasks);
+        }
+
+        function initTaskFilterInput($container, $tasks) {
+            var $input = $container.find('[data-role=input]');
+            $input.on('keyup', window.debounce(filter, 250));
+            return $input;
+
+            ///////////////////
+            function filter() {
+                filterTasks($tasks, $input.val());
+                gtag('event', 'filter tasks', {'event_category': 'feature'});
+            }
+        }
+
+        // TODO: wtf is this mess? Rewrite when possible.
+        function filterTasks($tasks, query) {
+            query = $.trim(query);
+            $tasks.removeClass('hidden');
+            if(/^\s*$/.test(query)){
+                return;
+            }
+            // Forced to add the i flag cause the keywords used for research are already transformed and doesn't correspond to what the user sees.
+            var queryRegExp = new RegExp(query, 'i');
+            $tasks.filter(function() {
+                return !queryRegExp.test($(this).data('keywords'));
+            }).addClass('hidden');
+        }
+
+    }, { passive:true });
+</script>
+<div data-control="task-list" class="task-list-line">
+
+    <div class="clearfix">
+        <div class="col-md-6 col-md-offset-3 filter-toggle no-js-hide text-center">
+            <label for="filter-input" class="filter-trigger" data-toggle="collapse" data-target="#filter-input">
+                Filter<span class="glyphicon glyphicon-filter"></span>
+            </label>
+            <div id="filter-input" class="collapse">
+                <input class="form-control" id="task-filter" type="text" data-role="input" placeholder="Type filter term (you may use a regular expression)"/>
+            </div>
+        </div>
+    </div>
+
+    {{#if siteMessage}}
+    <div class="col-xs-12 clearfix" data-test="alert">
+        <div class="alert alert-info site-message">
+            <h3 class="crunch-top"><span class="pull-left glyphicon glyphicon-exclamation-sign"></span> Important</h3>
+            <p class="h5">{{siteMessage}}</p>
+        </div>
+    </div>
+    {{/if}}
+
+    {{#deleted}}
+    <div class="col-xs-12 clearfix" data-test="alert">
+        <div class="alert alert-info">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <strong>Bye Bye URL</strong>
+            <p>The URL you selected and its associated results have been deleted.</p>
+        </div>
+    </div>
+    {{/deleted}}
+
+    {{> tasks}}
+
+</div>

@@ -1,0 +1,157 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<form role="form" class="col-md-12 task-form" id="url-form" action="{{formAction}}" method="post" data-test="{{ternary isNewTaskPage 'new-url-form' 'edit-url-form'}}">
+
+    <div class="form-group clearfix">
+        <div class="panel panel-default">
+            <div class="panel-heading"><label for="url-task-name">Name</label></div>
+            <div class="panel-body">
+                <input class="form-control" id="url-task-name" type="text" required placeholder="e.g. Orange FR" name="name" value="{{task.name}}"
+                       aria-describedby="url-describe-name"
+                       oninput="document.querySelector('.js-task__title').innerText = this.value; document.title = this.value;"/>
+            </div>
+            <div class="panel-footer" id="url-describe-name">
+                <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                A meaningful name to describe this audit
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <div class="panel panel-default">
+            <div class="panel-heading"><label for="task-url">URL</label></div>
+            <div class="panel-body">
+                <input class="form-control" id="task-url" type="url" required placeholder="e.g. http://www.orange.fr/" name="url" value="{{task.url}}"
+                       aria-describedby="describe-url"/>
+                <input class="aria-hidden" type="hidden" name="type" value="url" />
+            </div>
+            <div class="panel-footer" id="describe-url">
+                <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                An absolute URL to audit from. Crawling will start if depth is > 0 and limit > 1. Be aware that the crawler only keeps urls with the same protocol, host and port.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group clearfix">
+        <div class="panel panel-default">
+            <div class="panel-heading"><label for="task-limit">Limit</label></div>
+            <div class="panel-body">
+                <input class="form-control" id="task-limit" type="number" min="1" name="limit" placeholder="e.g. 1" value="{{task.limit}}"
+                       aria-describedby="describe-limit"/>
+            </div>
+            <div class="panel-footer" id="describe-limit">
+                <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                The maximum number of URL to add to the current audit when crawling including the first one.
+            </div>
+        </div>
+    </div>
+
+    <a id="advanced-controls-title" data-toggle="collapse" href="#advanced-controls" aria-expanded="false" aria-controls="advanced-controls"
+       onclick="">
+        <h3 class="task-form__subtitle">
+            Advanced controls…
+            <span class="glyphicon glyphicon-chevron-right advanced-controls-title__chevron" aria-hidden="true"></span>
+        </h3>
+    </a>
+
+    <div class="collapse" id="advanced-controls">
+
+        <div class="form-group clearfix">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label for="task-depth">Depth</label></div>
+                <div class="panel-body">
+                    <input class="form-control" id="task-depth" type="number" min="0" placeholder="e.g. 5" name="depth" value="{{task.depth}}"
+                           aria-describedby="describe-depth"/>
+                </div>
+                <div class="panel-footer" id="describe-depth">
+                    <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    0 means no crawling. When strict positive, it indicates the crawling depth. Once the first URL has been
+                    audited, URL in the page belonging to the same domain are added. Then added URL are audited and again, URL they contains are
+                    added until the configured depth or limit is reached.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group clearfix">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label for="task-concurrency">Concurrency</label></div>
+                <div class="panel-body">
+                    <input class="form-control" id="task-concurrency" type="number" min="1" max="5" placeholder="e.g. 5" name="concurrency" value="{{task.concurrency}}"
+                           aria-describedby="describe-concurrency"/>
+                </div>
+                <div class="panel-footer" id="describe-concurrency">
+                    <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Maximum number of URL that may been audited in parallel. Min: 1. Max: 5. This parameter makes sense if
+                    depth is > 0 and limit is > 1. Otherwise there is no crawling.
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function validate(input){
+                try{
+                    new RegExp(input.value);
+                    input.classList.remove('form-control--error');
+                    input.setCustomValidity('');
+                } catch(err) {
+                    input.classList.add('form-control--error');
+                    input.setCustomValidity('Invalid regular expression');
+                }
+            }
+        </script>
+
+        <div class="form-group clearfix">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label for="task-url-filter">URL Filter</label></div>
+                <div class="panel-body">
+                    <input class="form-control" id="task-url-filter" type="text" name="urlFilter" value="{{task.urlFilter}}"
+                           aria-describedby="describe-url-filter" oninput="validate(this)"/>
+                </div>
+                <div class="panel-footer" id="describe-url-filter">
+                    <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Regular expression that allows you to bypass the default crawling algorithm and decide precisely which urls are selected by the crawler.
+                    If you want to test your expression with several use cases, we recommend the formidable <a href="https://regex101.com" target="_blank" rel="noopener">regex101.com</a>.
+                    Don't forget to select the <em>javascript</em> flavor the the left.
+                    Here is a <a href="https://regex101.com/r/DePDgv/1/tests" target="_blank" rel="noopener">sample</a> to help you get started that allows any subdomain on <em>orange.com</em>.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group clearfix">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label for="task-timeout">Timeout (milliseconds)</label></div>
+                <div class="panel-body">
+                    <input class="form-control" id="task-timeout" type="number" min="0" placeholder="e.g. 180000" name="timeout" value="{{task.timeout}}"
+                           aria-describedby="describe-timeout"/>
+                </div>
+                <div class="panel-footer" id="describe-timeout">
+                    <span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Maximum duration while waiting for accessibility results. This is not the whole audit duration but
+                    only one URL maximum duration for tests execution.
+                </div>
+            </div>
+        </div>
+
+        {{> task-form/cron type='url'}}
+
+    </div> <!-- /collapse -->
+
+    {{> task-form/action-bar type='url'}}
+
+</form>

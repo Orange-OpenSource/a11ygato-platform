@@ -1,0 +1,101 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{#content "title"}}pa11y-dashboard{{/content}}
+
+<form class="sign-up-form" action="/sign-up" method="post" enctype="multipart/form-data">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Sign Up</h3>
+		</div>
+		<div class="panel-body">
+
+			<div class="hidden sign-up-form__error-messages"></div>
+
+			<div class="input-group">
+				<label class="input-group-addon" for="email">＠</label>
+				<input id="email" type="email" class="form-control" name="email" placeholder="Email" required>
+			</div>
+			<div class="input-group">
+				<label class="input-group-addon" for="password">🔑</label>
+				<input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+			</div>
+			<div class="input-group">
+				<label class="input-group-addon" for="firstName">👤</label>
+				<input id="firstName" type="text" class="form-control" name="firstName" placeholder="First name" required>
+			</div>
+			<div class="input-group">
+				<label class="input-group-addon" for="lastName">👤</label>
+				<input id="lastName" type="text" class="form-control" name="lastName" placeholder="Last name" required>
+			</div>
+			<button type="submit" class="btn btn-success btn-block sign-up-form__submit">Create my account</button>
+		</div>
+		<div class="panel-footer text-center">
+			<a href="/sign-in" class="sign-up-form__sign-in">Already have an account?</a>
+		</div>
+	</div>
+
+</form>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', domReady, { passive:true });
+
+    function domReady() {
+
+        var form = document.getElementsByClassName('sign-up-form')[ 0 ];
+        form.addEventListener('submit', formDidSubmitted, false);
+
+        /////////////
+
+        function formDidSubmitted(event) {
+            event.preventDefault();
+            var formData = new FormData(form);
+            var xhr      = new XMLHttpRequest();
+            xhr.open('POST', form.action);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var json = JSON.parse(this.responseText);
+                    if (this.status > 299) {
+                        var errBlock       = document.querySelector('.sign-up-form__error-messages');
+                        var errmsg;
+                        switch(json.code){
+                            case 9002:
+                                errmsg = 'Email already in use';
+                                break;
+                            case 9001:
+                                errmsg = 'Please all fields are required';
+                                break;
+                            default:
+                                errmsg = json.message;
+                        }
+                        errBlock.innerText = errmsg;
+                        errBlock.classList.remove('hidden').add('show');
+                    }
+                    else {
+                        location.pathname = '/sign-in';
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+
+    }
+
+</script>

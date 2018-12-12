@@ -1,0 +1,51 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{#content "title"}}
+Delete {{task.url}}
+{{/content}}
+
+<form class="col-xs-12 delete-form" action="{{task.hrefDelete}}" method="post" data-test="delete-url-form">
+    <div class="legend break-all">
+        <legend>Delete {{#with task.url}}URL ({{simplify-url this}}){{else}}Scenario{{/with}}</legend>
+    </div>
+    <p class="lead break-all">Are you sure you wish to delete <strong>{{task.url}}</strong> and it's associated results?</p>
+    <div class="actions-bar flex-container flex-container--main-start">
+        <button class="btn btn-danger" id="delete-button" type="submit" aria-label="Delete">
+            <span class="glyphicon glyphicon-trash"></span> Delete
+        </button>
+        <button class="btn btn-primary" id="cancel-button" autofocus type="button" onclick="history.back();" aria-label="Cancel">Cancel</button>
+    </div>
+</form>

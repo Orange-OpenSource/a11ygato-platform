@@ -1,0 +1,55 @@
+{
+    "name": "@a11ygato/audit-engine",
+    "version": "0.3.0",
+    "description": "@a11ygato/audit-engine is a node API to create accessibility reports using the axe-core engine into a Chrome container",
+    "main": "lib/AuditEngine.js",
+    "keywords": [
+        "a11y",
+        "accessibility",
+        "pa11y",
+        "pally",
+        "engine",
+        "audit",
+        "axe",
+        "analysis",
+        "report"
+    ],
+    "license": "GPL-3.0-or-later",
+    "repository": "github:Orange-OpenSource/a11ygato-platform",
+    "engines": {
+        "node": ">=8"
+    },
+    "author": "Jean Dat <jean.dat@orange.com>",
+    "scripts": {
+        "lint": "eslint --ignore-path=.gitignore --fix --color --format codeframe *.js **/*.js",
+        "watch": "npm run lint && npm run watch:js",
+        "watch:js": "chokidar '**/*.js' '*.js' -c 'npm run lint'"
+    },
+    "dependencies": {
+        "async": "~2.3",
+        "axe-core": "^3.1.2",
+        "chalk": "~1.1",
+        "commander": "~2.9.0",
+        "fetch-cookie": "^0.7.0",
+        "generic-pool": "^3.4.2",
+        "https-proxy-agent": "^2.2.1",
+        "joi": "~10.4.1",
+        "lodash": "^4.17.10",
+        "mkdirp": "~0.5.1",
+        "mongodb": "^2.2.35",
+        "node-fetch": "^1.7.3",
+        "portscanner": "^2.2.0",
+        "pretty-ms": "^3.2.0",
+        "proxy-agent": "^2.3.1",
+        "puppeteer": "^1.8.0",
+        "q": "^1.5.1",
+        "rimraf": "^2.6.2",
+        "shortid": "~2.2.6",
+        "verror": "~1.9.0",
+        "vm2": "^3.6.0"
+    },
+    "devDependencies": {
+        "chokidar-cli": "^1.2.0",
+        "eslint": "^4.19.1"
+    }
+}

@@ -1,0 +1,84 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<script>
+    document.documentElement.className = document.documentElement.className.replace('no-javascript', 'javascript');
+</script>
+<meta charset="utf-8"/>
+<title>{{title}}</title>
+<meta name="description" content="{{description}}"/>
+
+<link rel="icon" type="image/png" href="favicon.png" />
+
+{{!--For mobile devices--}}
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<link rel="manifest" href="/manifest.json?v={{version}}">
+
+<link rel="stylesheet" href="/app.min.css?v={{version}}"/>
+
+{{!--Critical scripts--}}
+{{!--loadCSS.js allows to load non critical CSS asynchronously--}}
+{{!--https://github.com/filamentgroup/loadCSS--}}
+<script>!function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);</script>
+
+{{!--Deferred scripts--}}
+<script src="/polyfills.min.js?v={{version}}" defer></script>
+<script src="/jquery.min.js?v={{version}}" defer></script>
+<script src="/bootstrap.min.js?v={{version}}" defer></script>
+<script src="/app.min.js?v={{version}}" defer></script>
+
+{{#if analyticsAccountId}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{analyticsAccountId}}"></script>
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        gtag('js', new Date());
+        setPageView('{{analyticsAccountId}}');
+
+        /////////////////////////////////
+
+        function setPageView(accountId) {
+
+            const path = location.href.replace(location.origin, '');
+
+            const routes = [
+                { regex:/^\/[^\/]+\/?$/g, path:'/task' },
+                { regex:/^\/[^\/]+\/[^\/]+\/?$/g, path:'/task/result' },
+                { regex:/^\/[^\/]+\/[^\/]+\/\d+\/?$/g, path:'/task/result/url' },
+                { regex:/^\/[^\/]+\/edit\/?$/g, path:'/task/edit' },
+                { regex:/^\/[^\/]+\/delete\/?$/g, path:'/task/delete' },
+                { regex:/^\/tasks\/[^\/]+\/results\/[^\/]+\/delete\/?$/g, path:'/task/result/delete' }
+            ];
+
+            for(let route of routes){
+                // Override the path used for Google Analytics to regroup pages by type and not by user.
+                if(path.match(route.regex)) return gtag('config', accountId, { 'page_path':route.path });
+            }
+
+            // If we get there, no regex matched
+            // No need to override anything. The url is already generic.
+            gtag('config', accountId, { 'page_path':path });
+        }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+    </script>
+{{/if}}

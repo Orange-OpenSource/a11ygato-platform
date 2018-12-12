@@ -1,0 +1,80 @@
+/*
+    @license
+    @a11ygato/dashboard
+    Copyright (C) 2018 Orange
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+// Here I'm extracting the content of main.less from bootstrap cause it seems that this file has been modified several times by my predecessors.
+// And I don't like the idea to modify directly a library we depends on.
+// Now we can safely deactivate what we don't use in bootstrap and override whatever we want like the theme.
+// It seems that bootswatch with the flatly theme has been used to customise bootstrap look.
+
+// Core variables and mixins
+@import "variables.less";
+
+// Bootswatch theme. Override bootstrap default variables.
+@import "theme/variables-flatly-custom.less";
+
+@import "mixins.less";
+
+// Reset
+@import "normalize.less";
+@import "print.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+@import "glyphicons.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+//@import "jumbotron.less";
+@import "thumbnails.less";
+@import "alerts.less";
+//@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+@import "wells.less";
+@import "close.less";
+
+// Components w/ JavaScript
+@import "modals.less";
+@import "tooltip.less";
+@import "popovers.less";
+//@import "carousel.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";
+
+// Bootswatch overrides
+@import "theme/bootswatch-flatly-custom.less";

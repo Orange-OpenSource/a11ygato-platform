@@ -1,0 +1,51 @@
+{
+    "name": "@a11ygato/cli",
+    "version": "0.3.0",
+    "description": "@a11ygato/cli is a thin wrapper around @a11ygato/audit-engine for the command line",
+    "keywords": [
+        "a11y",
+        "accessibility",
+        "pa11y",
+        "pally",
+        "cli",
+        "command line",
+        "audit",
+        "axe",
+        "analysis",
+        "report"
+    ],
+    "license": "GPL-3.0-or-later",
+    "repository": "github:Orange-OpenSource/a11ygato-platform",
+    "engines": {
+        "node": ">=8"
+    },
+    "bin": {
+        "a11ygato": "bin/a11ygato.js"
+    },
+    "author": "Jean Dat <jean.dat@orange.com>",
+    "scripts": {
+        "lint": "eslint --ignore-path=.gitignore --fix --color --format codeframe .",
+        "watch": "npm run lint && npm run watch:js",
+        "watch:js": "chokidar '**/*.js' '*.js' -c 'npm run lint'"
+    },
+    "devDependencies": {
+        "chokidar-cli": "^1.2.0",
+        "eslint": "^4.19.1"
+    },
+    "dependencies": {
+        "@a11ygato/audit-engine": "../audit-engine",
+        "chalk": "^2.4.1",
+        "commander": "^2.15.1",
+        "import-cwd": "^2.1.0",
+        "joi": "^10.6.0",
+        "lodash": "^4.17.10",
+        "mkdirp-promise": "^5.0.1",
+        "moment": "^2.22.2",
+        "mongodb": "^2.2.35",
+        "pm2": "^3.1.2",
+        "q": "^1.5.1",
+        "shelljs": "^0.7.8",
+        "verror": "^1.10.0",
+        "xmlbuilder": "^9.0.7"
+    }
+}

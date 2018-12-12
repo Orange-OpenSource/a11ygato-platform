@@ -1,0 +1,21 @@
+!**/.gitkeep
+
+# Generated npm files
+node_modules
+npm-debug.log
+
+# I'm removing this file from version control cause it crashes npm install from time to time
+**/package-lock.json
+
+# Generated module files
+public/
+logs/
+
+# Webstorm IDE files
+.idea/
+
+# Mongo db
+data/
+
+# macOS files
+.DS_Store

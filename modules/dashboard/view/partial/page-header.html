@@ -1,0 +1,52 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see <http://www.gnu.org/licenses/>.
+}}
+<header role="banner">
+	<div class="header">
+		<div class="container">
+            {{#if isHomePage}}<h1 class="flex-container flex-container--main-start app-title">{{else}}<div class="h1 flex-container flex-container--main-start app-title">{{/if}}
+                <h1 class="app-title__name"><a href="/">A11YGATO</a></h1>
+                <div class="h3 app-title__motto">your automated accessibility testing pal</div>
+            {{#if isHomePage}}</h1>{{else}}</div>{{/if}}
+			<div class="flex-container sub-header">
+				{{#if isLoggedIn}}
+                    {{> breadcrumb}}
+                    <div class="user-info">
+                        {{firstName}} {{lastName}} <span class="separator">▷</span> <a href='/logout'>Logout</a>
+                    </div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</header>

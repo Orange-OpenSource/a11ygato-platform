@@ -1,0 +1,62 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<div class="form-group clearfix">
+    <div class="panel panel-default">
+        <div class="cron-popover-container"></div>
+        <div class="panel-heading"><label for="{{type}}-task-cron">Frequency (CRON expression)</label></div>
+        <div class="panel-body input-group">
+            <input class="form-control" id="{{type}}-task-cron" type="text" placeholder="e.g. 00 02 * * 1-5" name="cron" value="{{task.cron}}"
+                   aria-describedby="{{type}}-describe-cron"/>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Examples <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#" onclick="document.getElementById('{{type}}-task-cron').value = '0 0 * * 0'; return false;">
+                        Every week on sunday at midnight
+                    </a></li>
+                    <li><a href="#" onclick="document.getElementById('{{type}}-task-cron').value = '0 0 * * *'; return false;">
+                        Every day at midnight
+                    </a></li>
+                    <li><a href="#" onclick="document.getElementById('{{type}}-task-cron').value = '0 */12 * * *'; return false;">
+                        Every 12 hours
+                    </a></li>
+                    <li><a href="#" onclick="document.getElementById('{{type}}-task-cron').value = '0 0 1,15 * *'; return false;">
+                        Twice per month at midnight
+                    </a></li>
+                    <li><a href="#" onclick="document.getElementById('{{type}}-task-cron').value = '30 11 * * 1-5'; return false;">
+                        Every weekday (Monday through Friday) at 11:30:00 AM
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer" id="{{type}}-describe-cron">
+            <div><span class="panel-footer__icon glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                A CRON expression is a string comprising six fields separated by white space that represents a set of times in order to schedule
+                your audit:<br/>
+            </div>
+            <div class="text-center">
+                &lt;minutes&gt; &lt;hours&gt; &lt;day-of-month&gt; &lt;months&gt; &lt;day-of-week&gt;
+                <a class="flr" data-toggle="collapse" href="#{{type}}-cron-help" aria-expanded="false" aria-controls="{{type}}-cron-help">Show
+                    more…</a>
+            </div>
+            <div class="collapse" id="{{type}}-cron-help">{{> task-form/cron-help}}</div>
+        </div>
+    </div>
+</div>

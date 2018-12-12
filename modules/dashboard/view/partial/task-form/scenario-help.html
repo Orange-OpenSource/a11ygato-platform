@@ -1,0 +1,199 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<script>loadCSS('/prism.css?v={{version}}');</script>
+<script src="/prism.js?v={{version}}" defer></script>
+
+<hr class="hr-sm"/>
+<h4>Overview</h4>
+
+<p>A scenario is javascript code (ES6) using the <a href="https://github.com/GoogleChrome/puppeteer/blob/v0.11.0/docs/api.md">Puppeteer API</a>.</p>
+
+<p>You can use the modern <code>async/await</code> keywords if you want and you DON'T need any
+    <code>IIEF</code> or async wrapper function to start using it right away.</p>
+
+<p>Whatever code style you like, your should always return a <code>Promise</code> as your last expression:</p>
+
+<pre><code class="language-javascript">
+return new Promise((resolve, reject) => {
+    // Do something
+    resolve(); // or reject()
+});
+
+// OR
+
+return audit(...).then(() => {
+    return audit(...);
+}).then(() => {
+    return audit(...);
+});
+
+// OR
+
+await audit(...);
+await audit(...);
+
+// OR
+
+return Promise.all(audit(...), audit(...), audit(...));
+</code></pre>
+
+<h4>Examples</h4>
+
+<h5>A simple example with BASIC authentication</h5>
+
+<pre><code class="language-javascript">
+/************************************************************************************/
+// BASIC AUTH
+/************************************************************************************/
+
+const username = 'foo';
+const password = 'bar';
+
+const url = `https://httpbin.org/basic-auth/${username}/${password}`;
+
+await page.goto(url);
+await page.authenticate({ username, password });
+
+// Trigger an audit using the current state (current page url).
+await audit(page);
+
+
+// This is another way to set HTTP headers but be aware they will be preserved between navigations.
+// const headers = new Map();
+// headers.set(
+//     'Authorization',
+//     `Basic ${new Buffer(`${username}:${password}`).toString('base64')}`
+// );
+// await page.setExtraHTTPHeaders(headers);
+</code></pre>
+
+<h5>A more advanced example</h5>
+
+<pre><code class="language-javascript">
+/************************************************************************************/
+// FORM AUTH
+/************************************************************************************/
+
+const login = 'foo';
+const password = 'bar';
+const timeout = 90000;
+
+await page.goto('http://www.orange.fr/portail');
+
+// Click the customer space button
+await page.waitForSelector('.espace-client-left', { visible: true, timeout });
+await page.click('.espace-client-left');
+
+// Click the identification button
+await page.waitForSelector('#sc-identification .ec_button5', { visible: true, timeout });
+await page.click('#sc-identification .ec_button5');
+
+// Set username and password
+await page.waitForSelector('#default_f_credential', { visible: true, timeout });
+await page.$eval('#default_f_credential', el => el.value = '');
+await page.focus('#default_f_credential');
+await page.type(login);
+await page.waitForSelector('#default_f_password', { visible: true, timeout });
+await page.focus('#default_f_password');
+await page.type(password);
+
+// Submit form
+await page.click('#AuthentForm input[type=submit].sc_button_content_2.submit');
+await page.waitForNavigation({ timeout });
+
+// Audit current page and another one (crawl).
+await audit(page, { limit: 2, depth: 1 });
+
+// Audit another site entirely with the same connection.
+// URLs will be audited sequentially because there is only one connection.
+await audit(page, { url: 'http://www.orange.es', limit:5 });
+
+// Audit another site without reusing the same connection (will use a shared pool of connections).
+// A maximum of 5 URLs can be audited in parallel.
+await audit({ url: 'https://twitter.com', concurrency: 5, limit: 3, depth: 2 });
+</code></pre>
+
+<h4>Globals</h4>
+
+<h5>page:Page</h5>
+
+<code>page</code> is an instance of the Puppeteer <code>Page</code> class. You can use it normally even though some methods are frozen for obvious security reasons.
+You can see <code>page</code> as a tab in Chrome.
+
+<h5>audit([page], task)</h5>
+
+<ul>
+    <li>
+        <code>page</code> <a href="https://github.com/GoogleChrome/puppeteer/blob/v0.11.0/docs/api.md#class-page">Page</a>
+        Optional Puppeteer Page instance.
+    </li>
+    <li>
+        <code>task</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+        Task configuration:
+        <ul>
+            <li>
+                <code>url</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+                URL to audit.
+            </li>
+            <li>
+                <code>limit</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+                Maximum number of URL that will be audited. Default <code>1</code>.
+            </li>
+            <li>
+                <code>depth</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+                Maximum depth when crawling (searching new urls). Default <code>5</code>.
+            </li>
+            <li>
+                <code>concurrency</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+                Maximum number of URL audited in parallel (between 1 and 5). Default <code>5</code>.
+            </li>
+            <li>
+                <code>urlFilter</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+                Regular expression that allows you to bypass the default crawling algorithm and decide precisely which urls are selected by the crawler.
+                If you want to test your expression with several use cases, we recommend the formidable <a href="https://regex101.com" target="_blank" rel="noopener">regex101.com</a>.
+                Don't forget to select the <em>javascript</em> flavor the the left.
+                Here is a <a href="https://regex101.com/r/DePDgv/1/tests" target="_blank" rel="noopener">sample</a> to help you get started that allows any subdomain on <em>orange.com</em>.
+            </li>
+            <li>
+                <code>timeout</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+                Timeout used during an audit for specific tasks like loading the page, executing axe tests, etc. Default <code>180000</code>.
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<p>When <code>page</code> is omitted, you must provide at least this minimalist task configuration: <code>{ url:'https://...' }</code></p>
+<p>Transmitting only the current <code>page</code> is equivalent to transmitting a minimalist task configuration with only a URL (the current one).</p>
+
+<h5>Accessible modules</h5>
+
+<p>There is not much you can require. Here is the current whitelist:</p>
+
+<ul>
+    <li><code>q</code></li>
+    <li><code>url</code></li>
+    <li><code>async</code></li>
+    <li><code>lodash</code></li>
+    <li><code>util</code></li>
+</ul>
+
+<p>You have access to classic ES6 globals plus node <code>Buffer</code> class.</p>
+
+
+

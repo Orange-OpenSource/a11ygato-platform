@@ -1,0 +1,141 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<!-- Keyboard Shortcuts Modal -->
+<div class="modal keyboard-shortcuts-modal" id="keyboardShortcutsModal" tabindex="-1" role="dialog" aria-labelledby="keyboardShortcutsModalLabel">
+    <div class="modal-dialog modal-xm" role="document" aria-describedby="Modal dialog listing common keyboard shortcuts">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body text-center">
+                <ul class="list-group">
+                    <li class="list-group-item heading">Common</li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">?</span>
+                        </div>
+                        <div>Show this dialog</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">/</span>
+                        </div>
+                        <div>Go Home</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">Enter</span>
+                        </div>
+                        <div>Submit single-line input</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <div><span class="keyboard-key">⌘</span><span class="keyboard-key">Enter</span></div>
+                            <div><span class="keyboard-key">Ctrl</span><span class="keyboard-key">Enter</span></div>
+                        </div>
+                        <div>Submit multi-line input</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">d</span>
+                        </div>
+                        <div>Trigger a delete action</div>
+                    </li>
+                </ul>
+                <hr/>
+                <ul class="list-group">
+                    <li class="list-group-item heading">Task</li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">r</span>
+                        </div>
+                        <div>Run</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <span class="keyboard-key">e</span>
+                        </div>
+                        <div>Edit</div>
+                    </li>
+                    <li class="list-group-item flex-row flex-row--justified">
+                        <div class="keyboard-shorcut">
+                            <div><span class="keyboard-key">⌘</span><span class="keyboard-key">Alt</span><span class="keyboard-key">l</span></div>
+                            <div><span class="keyboard-key">Ctrl</span><span class="keyboard-key">Alt</span><span class="keyboard-key">f</span></div>
+                        </div>
+                        <div>Beautify code</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Keyboard shortcuts broker. Dispatch common actions to the document.
+    // Any page interested in one action can listen to the equivalent event.
+    // For instance, the "d" key will trigger on the document a "deleteAction" event.
+    document.addEventListener('keyup', function(event) {
+        switch(event.code){
+            case 'Escape':
+                // Cheap solution to handle issues with our only modal.
+                // The right solution would be to handle a stack of listeners and notify the last one.
+                // But this is the only modal in the whole application and most people will never view it.
+                // So this is good enough.
+                if(document.querySelector('.keyboard-shortcuts-modal.in')) {
+                    // $keyboardModal.modal('hide');
+                    return;
+                }
+                // Thus, we trigger this event if there is no modal in foreground.
+                document.dispatchEvent(new CustomEvent('escapeAction'));
+                break;
+            case 'Enter':
+                document.dispatchEvent(new CustomEvent('enterAction'));
+                break;
+        }
+    });
+    document.addEventListener('keypress', function(event) {
+        var tagName = event.target.tagName.toLowerCase();
+        // Keyboard shortcuts are processed only if we are not inside an input field.
+        if(tagName === 'input' || tagName === 'textarea') return;
+        switch(event.key){
+            case 'r':
+                document.dispatchEvent(new CustomEvent('runAction'));
+                break;
+            case 'e':
+                document.dispatchEvent(new CustomEvent('editAction'));
+                break;
+            case 'd':
+                document.dispatchEvent(new CustomEvent('deleteAction'));
+                break;
+            case '?':
+                $('#keyboardShortcutsModal').modal('toggle');
+                gtag('event', 'show keyboard shortcuts', {'event_category': 'feature'});
+                break;
+            case '/':
+                window.location = '/';
+                break;
+        }
+    });
+    // Initialise the keyboard modal.
+    document.addEventListener('DOMContentLoaded', function() {
+        window.$keyboardModal = $('#keyboardShortcutsModal');
+        $keyboardModal.modal({ show:false, keyboard:true });
+    }, { passive:true });
+</script>

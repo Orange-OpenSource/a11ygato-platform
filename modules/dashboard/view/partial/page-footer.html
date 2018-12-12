@@ -1,0 +1,71 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard. If not, see http://www.gnu.org/licenses.
+}}
+<footer role="contentinfo">
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-5">
+                <small>&copy; {{year}} Nature Publishing Group. © Orange.
+                    <br/>A11YGATO is licensed under the GNU General Public License 3.0.
+                    <br/>Version {{version}}
+                    <br/>
+                    <br/><span class="italic">Compatible with latest versions of Chrome and Firefox.</span>
+                    <br/><span class="italic">Other browsers might be partially compatible.</span>
+                </small>
+            </div>
+            <div class="col-md-7 clearfix">
+                <ul class="crunch-bottom floated-list nav">
+                    <li>
+                        <a href="https://github.com/Orange-OpenSource/a11ygato-platform/tree/master/modules/dashboard" onclick="javascript:gtag('event', 'github repository', {'event_category': 'external links'})">Github Repo</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Orange-OpenSource/a11ygato-platform/tree/master/modules/cli" onclick="javascript:gtag('event', 'cli', {'event_category': 'external links'})">CLI</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Orange-OpenSource/a11ygato-platform/tree/master/modules/audit-engine" onclick="javascript:gtag('event', 'node api', {'event_category': 'external links'})">Node API</a>
+                    </li>
+                    <li>
+                        <a href="https://www.w3.org/WAI/intro/wcag#components" onclick="javascript:gtag('event', 'wcag specification', {'event_category': 'external links'})">WCAG</a>
+                    </li>
+                    <li>
+                        <a href="#keyboardShortcutsModal" data-toggle="modal" onclick="javascript:gtag('event', 'show keyboard shortcuts', {'event_category': 'feature'})">Keyboard Shortcuts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br/>
+    </div>
+</footer>
+
+{{> keyboard-shortcuts}}
+

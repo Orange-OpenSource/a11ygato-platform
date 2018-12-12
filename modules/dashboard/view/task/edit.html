@@ -1,0 +1,104 @@
+{{!
+@a11ygato/dashboard
+Copyright (C) 2018 Orange
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{!
+This file is part of pa11y-dashboard.
+
+pa11y-dashboard is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pa11y-dashboard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pa11y-dashboard.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{#content "title"}}
+{{ternary task.name task.name 'New Task'}}
+{{/content}}
+
+
+<div class="task">
+
+    <div class="legend col-md-12">
+        <h2 class="h2 crunch-top js-task__title">{{ternary task.name task.name 'New Task'}}</h2>
+        <!-- Nav tabs -->
+        <ul class="nav nav-pills {{ternary isNewTaskPage '' 'dn'}}" role="tablist">
+            <li role="presentation" class="{{ternary isScenario '' 'active'}}">
+                <a id="tab-url" href="#tab-content-url" aria-controls="tab-content-url"
+                   role="tab" data-toggle="pill">URL</a></li>
+            <li role="presentation" class="{{ternary isScenario 'active' ''}}">
+                <a id="tab-scenario" href="#tab-content-scenario" aria-controls="tab-content-scenario"
+                   role="tab" data-toggle="pill">Scenario</a></li>
+        </ul>
+    </div>
+
+    {{#error}}
+    <div class="col-md-12 clearfix" data-test="error">
+        <div class="alert alert-danger">
+            <strong>Oh my gosh!</strong>
+            <p>{{.}}</p>
+        </div>
+    </div>
+    {{/error}}
+
+    {{#edited}}
+    <div class="col-md-12 clearfix" data-test="alert">
+        <div class="alert alert-success">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <strong>Success!</strong>
+            <p>Your changes have been saved.</p>
+        </div>
+    </div>
+    {{/edited}}
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane {{ternary isScenario '' 'active'}}" id="tab-content-url">
+            {{> task-form/url}}
+        </div>
+        <div role="tabpanel" class="tab-pane {{ternary isScenario 'active' ''}}" id="tab-content-scenario">
+            {{> task-form/scenario}}
+        </div>
+    </div>
+</div>
+
+{{> popovers}}
+
+<script>
+
+    // Update url search parameters depending on tab selection (url/scenario)
+    document.addEventListener('DOMContentLoaded', function() {
+        history && history.replaceState && window.URLSearchParams && $('[role="tablist"]').on('shown.bs.tab', function(event) {
+            var usp = new URLSearchParams(location.search);
+            event.target.id === 'tab-url'
+                ? usp.set('type', 'url')
+                : usp.set('type', 'scenario');
+            var newURL = location.origin + location.pathname + '?' + usp.toString() + location.hash;
+            console.log('Rewriting history with:', newURL);
+            history.replaceState({}, '', newURL);
+        });
+    }, { passive:true });
+
+</script>
+
