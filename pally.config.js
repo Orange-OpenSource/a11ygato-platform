@@ -116,6 +116,6 @@ for(const app of configuration.apps){
     }
 }
 
-console.log('Once all servers have started, you may point a browser to https://localhost:8443 or https://pally:8443 if you have setted an alias in your host file\n');
+console.log('Once all servers have started, you may point a browser to https://127.0.0.1:8443 or https://pally:8443 if you have setted an alias in your host file\n');
 
 module.exports = configuration;

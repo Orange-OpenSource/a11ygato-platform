@@ -20,7 +20,7 @@ a11ygato is a suite of tools to help audit web site accessibility. A score (KPI)
     - An empty data folder is created so you can have your database locally while developing or testing 
     - for development, you will probably be good to go with each project default configuration file but you might want to configure them in dashboard and webservice `config` folder. Read the documentation of each project to better understand what you can configure. 
 5. Start the dashboard: `npm start`
-6. Open it in a modern browser: `https://localhost:8443`.
+6. Open it in a modern browser: `https://127.0.0.1:8443`.
 
 The dashboard is a tool for decision makers that allows the monitoring accross time of sites accessibility score:
   - Features:
@@ -52,7 +52,7 @@ For instance for unix systems, it is `/etc/hosts`:
 …
 ```
 
-You can then open `https://pally:8443` instead of `https://localhost:8443`.
+You can then open `https://pally:8443` instead of `https://127.0.0.1:8443`.
 
 **WARNING: these auto-generated keys are for development only! For production, you should create your own ones!**
 
