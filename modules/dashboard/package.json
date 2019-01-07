@@ -1,6 +1,6 @@
 {
     "name": "@a11ygato/dashboard",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "@a11ygato/dashboard is a visual web interface to consult and monitor accessibility reports",
     "keywords": [
         "a11y",

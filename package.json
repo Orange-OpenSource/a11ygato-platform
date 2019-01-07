@@ -1,6 +1,6 @@
 {
     "name": "@a11ygato/platform",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "a11ygato suite of tools to analyze and monitor accessibility results",
     "main": "pally.config.js",
     "scripts": {

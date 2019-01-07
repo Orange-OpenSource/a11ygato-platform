@@ -1,6 +1,6 @@
 {
     "name": "@a11ygato/cli",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "@a11ygato/cli is a thin wrapper around @a11ygato/audit-engine for the command line",
     "keywords": [
         "a11y",

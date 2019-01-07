@@ -71,8 +71,8 @@
 - [esquery@1.0.1](https://github.com/jrfeenst/esquery) from [Joel Feenstra](mailto:jrfeenst+esquery@gmail.com)
 ## GPL-3.0*
 
-- [@a11ygato/audit-engine@1.0.0](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
-- [@a11ygato/cli@1.0.0](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
+- [@a11ygato/audit-engine@1.0.1](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
+- [@a11ygato/cli@1.0.1](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
 ## ISC
 
 - [mkdirp-promise@5.0.1](https://github.com/ahmadnassri/mkdirp-promise) from [Ahmad Nassri](mailto:ahmad@ahmadnassri.com)

@@ -52,7 +52,7 @@
 - [isemail@2.2.1](https://github.com/hapijs/isemail)
 ## GPL-3.0*
 
-- [@a11ygato/audit-engine@1.0.0](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
+- [@a11ygato/audit-engine@1.0.1](https://github.com/Orange-OpenSource/a11ygato-platform) from [Jean Dat](mailto:jean.dat@orange.com)
 ## ISC
 
 - [semver@5.5.0](https://github.com/npm/node-semver)

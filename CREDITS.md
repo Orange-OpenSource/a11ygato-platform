@@ -60,7 +60,7 @@
 - [spdx-license-ids@3.0.2](https://github.com/shinnn/spdx-license-ids) from Shinnosuke Watanabe
 ## GPL-3.0*
 
-- [@a11ygato/platform@1.0.0](https://github.com/Orange-OpenSource/a11ygato-platform) from Orange
+- [@a11ygato/platform@1.0.1](https://github.com/Orange-OpenSource/a11ygato-platform) from Orange
 ## ISC
 
 - [set-blocking@2.0.0](https://github.com/yargs/set-blocking) from [Ben Coe](mailto:ben@npmjs.com)
