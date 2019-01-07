@@ -8,14 +8,16 @@ npm-debug.log
 **/package-lock.json
 
 # Generated module files
-public/
+public/*
+!public/.gitkeep
 logs/
 
 # Webstorm IDE files
 .idea/
 
 # Mongo db
-data/
+data/*
+!data/.gitkeep
 
 # macOS files
 .DS_Store
