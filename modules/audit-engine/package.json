@@ -36,7 +36,7 @@
         "joi": "~10.4.1",
         "lodash": "^4.17.10",
         "mkdirp": "~0.5.1",
-        "mongodb": "^2.2.35",
+        "mongodb": "^3.6.1",
         "node-fetch": "^1.7.3",
         "portscanner": "^2.2.0",
         "pretty-ms": "^3.2.0",
