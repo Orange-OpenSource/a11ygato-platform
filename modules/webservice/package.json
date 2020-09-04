@@ -45,7 +45,7 @@
         "jsonwebtoken": "^7.4.1",
         "later": "^1.2.0",
         "longjohn": "~0.2.11",
-        "mongodb": "^2.2.36",
+        "mongodb": "^3.6.1",
         "q": "~1.4.1",
         "underscore": "~1.8",
         "urijs": "~1.18.2",
